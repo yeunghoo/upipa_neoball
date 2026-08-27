@@ -26,6 +26,14 @@ post_install do |installer|
       config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
       config.build_settings['SWIFT_VERSION'] = '5.0'
+      # CI Manual signing: Pods must not inherit app provisioning profile
+      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+      config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ''
+      config.build_settings['CODE_SIGNING_IDENTITY'] = ''
+      config.build_settings['CODE_SIGNING_IDENTITY[sdk=appletvos*]'] = ''
+      config.build_settings['CODE_SIGNING_IDENTITY[sdk=iphoneos*]'] = ''
+      config.build_settings['CODE_SIGNING_IDENTITY[sdk=watchos*]'] = ''
     end
   end
 
