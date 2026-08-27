@@ -1,0 +1,37 @@
+PODS:
+  - FBAudienceNetwork (6.22.0)
+  - SmartdigimktSDK (6.5.75)
+  - TPNiOS (6.5.75):
+    - TPNiOS/TPNSDK (= 6.5.75)
+  - TPNiOS/TPNSDK (6.5.75)
+  - TPNMediationAdxSmartdigimktAdapter (6.5.75.2.2):
+    - SmartdigimktSDK (= 6.5.75)
+    - TPNiOS (>= 6.5.60)
+  - TPNMediationFacebookAdapter (6.22.0.2.0):
+    - FBAudienceNetwork (= 6.22.0)
+    - TPNiOS (>= 6.5.60)
+
+DEPENDENCIES:
+  - FBAudienceNetwork (= 6.22.0)
+  - TPNiOS (= 6.5.75)
+  - TPNMediationAdxSmartdigimktAdapter (= 6.5.75.2.2)
+  - TPNMediationFacebookAdapter (= 6.22.0.2.0)
+
+SPEC REPOS:
+  trunk:
+    - FBAudienceNetwork
+    - SmartdigimktSDK
+    - TPNiOS
+    - TPNMediationAdxSmartdigimktAdapter
+    - TPNMediationFacebookAdapter
+
+SPEC CHECKSUMS:
+  FBAudienceNetwork: b05c65487114aa3bf3a68e865c60937a9fb03b69
+  SmartdigimktSDK: 6702ca42aad588b709b95bc32ddd80745fb68e8c
+  TPNiOS: b17b92e7bcede057195b6058150d0b73c02dc6ea
+  TPNMediationAdxSmartdigimktAdapter: a9f1670b8ef9abbac3337da676467418079f1e5e
+  TPNMediationFacebookAdapter: 76da7ff8e3486e1efb00e9ede7ff2bc7bb098fe2
+
+PODFILE CHECKSUM: 97d930fcbc201d37179fe60e85adf27ffd6a8189
+
+COCOAPODS: 1.16.2

@@ -6,18 +6,22 @@
 //
 
 #import "SceneDelegate.h"
+#import "SplashViewController.h"
+#import "VKMediaLoader.h"
 
 @interface SceneDelegate ()
-
 @end
 
 @implementation SceneDelegate
 
-
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-    // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-    // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    if (![scene isKindOfClass:[UIWindowScene class]]) return;
+    UIWindowScene *windowScene = (UIWindowScene *)scene;
+
+    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+    self.window.rootViewController = [[SplashViewController alloc] init];
+    [self.window makeKeyAndVisible];
+
 }
 
 
@@ -30,8 +34,11 @@
 
 
 - (void)sceneDidBecomeActive:(UIScene *)scene {
-    // Called when the scene has moved from an inactive state to an active state.
-    // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    // iOS 15+：ATT 弹窗必须在 UIApplicationStateActive 时请求；广告点火放在此处更稳妥。
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [VKMediaLoader vka_startSession];
+    });
 }
 
 
